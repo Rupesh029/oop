@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream.h>
+
+class test
+{
+public:
+	int a;
+	test()
+	{
+		a=0;
+		cout<<a;
+	}
+	test(int pa)
+	{
+		a = pa;
+		cout<<a;
+	}
+	test(test &t) //copy constructor
+	{
+		a=t.a;
+		cout<<"\n t.a"<< t.a;
+	}
+};
+void main()
+{
+	test t(5);
+	cout<<"\n"<<t.a;
+	test t1(t);
+	cout<<"\n"<<t1.a;
+	getchar();
+}
